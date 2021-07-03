@@ -15,20 +15,12 @@ public class Cuenta {
     Atm atm;
 
     public Cuenta() {
-    }
- 
-    public boolean validarRetiro(double cantidad){
-        atm = new Atm(cantidad);
-        saldo = 200.00;
-        double aux;
-        aux = atm.getCantidad();
-        if(aux > this.saldo){
-            return false;
-        }else{
-            return true;
-        }
+        saldo = 200;
     }
     
-    
-    
+    public static double getSaldo() {
+        
+        return saldo;
+        
+    }  
 }

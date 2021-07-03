@@ -19,11 +19,10 @@ public class JFAtm extends javax.swing.JFrame {
      * Creates new form JFAtm
      */
     
-    Cuenta cuenta;
+    
     Atm atm;
     public JFAtm() {
         initComponents();
-        cuenta = new Cuenta();
         this.setLocationRelativeTo(null);
         this.jTAAtm.setText("Bienvenido" + "\npor favor seleccione " + "\nel botón con la acción" + "\nque desea realizar!");
     }
@@ -256,7 +255,7 @@ public class JFAtm extends javax.swing.JFrame {
         double monto = Double.parseDouble(respuesta);
         atm = new Atm(monto);
         
-        if(cuenta.validarRetiro(monto)){
+        if(atm.extraerRetiro(monto)){
             JOptionPane.showMessageDialog(null, "Operación realizada correctamente");
         }else{
             JOptionPane.showMessageDialog(null, "Operación fallida");

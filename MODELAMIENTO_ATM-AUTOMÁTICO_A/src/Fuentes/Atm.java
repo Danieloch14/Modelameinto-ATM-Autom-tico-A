@@ -5,6 +5,8 @@
  */
 package Fuentes;
 
+import static Fuentes.Cuenta.saldo;
+
 /**
  *
  * @author danie
@@ -23,6 +25,17 @@ public class Atm {
 
     public double getCantidad() {
         return cantidad;
+    }
+    
+    public boolean extraerRetiro(double cantidad){
+        cuenta = new Cuenta();
+        double aux;
+        aux = this.getCantidad();
+        if(aux > cuenta.getSaldo()){
+            return false;
+        }else{
+            return true;
+        }
     }
     
     
